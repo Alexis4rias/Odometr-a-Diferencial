@@ -121,35 +121,12 @@ Una vez corriendo el servidor, abrir `index.html` directamente en el navegador (
 
 > El servidor imprimirá en consola cada ciclo de 50 ms con los ticks y distancias actualizadas, lo que permite ver los datos crudos mientras la interfaz los visualiza.
 
----
-
-## Parámetros configurables
-
-| Parámetro | Dónde | Valor por defecto |
-|---|---|---|
-| Puerto del servidor | `server.js` → `PORT` | `3000` |
-| Intervalo de muestreo | `server.js` → `INTERVAL_MS` | `50 ms` |
-| Diámetro de rueda | `server.js` → `WHEEL_DIAMETER` | `0.14 m` |
-| Ticks por vuelta | `server.js` → `TICKS_PER_REV` | `20` |
-| Ancho entre ruedas | Interfaz web (campo `W`) | `0.20 m` |
-| URL de la API | Interfaz web (campo URL) | `http://localhost:3000` |
-
----
-
 ## Tecnologías usadas
 
 - **Node.js** — servidor de simulación de encoders (sin frameworks, solo el módulo `http` nativo).
 - **HTML / CSS / JavaScript** — interfaz completa sin frameworks de frontend.
 - **Chart.js** — gráficas en tiempo real.
 - **Canvas API** — renderizado del mapa de trayectoria.
-
----
-
-## Limitaciones conocidas
-
-La odometría, por su naturaleza, acumula errores con el tiempo. En este simulador eso es visible cuando la diferencia entre ticks izquierdo y derecho crece mucho, lo que el log marca como advertencia de posible derrape. En un robot real se compensaría con sensores adicionales como un giroscopio o correcciones periódicas de posición absoluta. En este proyecto el enfoque es exclusivamente odométrico, lo que lo hace simple de implementar pero inexacto a largo plazo.
-
----
 
 ## Autor
 
